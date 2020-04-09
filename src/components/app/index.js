@@ -1,15 +1,19 @@
-import React, { useState, useCallback } from 'react'
-import { Button } from './Button'
-import { Square } from './Square'
-import { Circle } from './Circle'
-import './App.css'
+import React, { useCallback, useState } from 'react'
+import Button from '../button/index'
+import Circle from '../circle/index'
+import './styles.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-  const favoriteNums = [7, 21, 37]
+  const [count, setCount] = useState(() => +localStorage.getItem('count') || 0)
+  const nums = [7, 21, 37, 900]
 
   const increment = useCallback((n) => {
-    setCount(c => c + n)
+    setCount(c => {
+      const newValue = c + n
+      localStorage.setItem('count', newValue)
+      return newValue
+    });
+
   }, [setCount])
 
   return (
@@ -24,10 +28,10 @@ function App() {
             <Button increment={increment} n={100} />
           </div>
           <div className="app__buttons">
-            {favoriteNums.map(n => (
-                <div className="app__circle">
-                  <Circle increment={increment} n={n} key={n}/>
-                </div>
+            {nums.map(n => (
+              <div className="app__circle" key={n}>
+                <Circle increment={increment} n={n} />
+              </div>
             ))}
           </div>
         </div>
