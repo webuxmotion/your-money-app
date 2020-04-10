@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useMemo, useState } from 'react'
 import Button from '../button/index'
 import Circle from '../circle/index'
 import './styles.css'
@@ -13,7 +13,13 @@ function App() {
       localStorage.setItem('count', newValue)
       return newValue
     });
+  }, [setCount])
 
+  const resetCount = useCallback((n) => {
+    setCount(_ => {
+      localStorage.setItem('count', n)
+      return n
+    });
   }, [setCount])
 
   return (
@@ -25,7 +31,7 @@ function App() {
         <div className="app__body">
           <div className="app__sum">${count}</div>
           <div className="app__big-button">
-            <Button increment={increment} n={100} />
+            <Button clickHandler={increment} n={100} text="+$100" color="blue" />
           </div>
           <div className="app__buttons">
             {nums.map(n => (
@@ -34,6 +40,9 @@ function App() {
               </div>
             ))}
           </div>
+        </div>
+        <div className="app__footer">
+            <Button clickHandler={resetCount} n={0} text="Reset money" color="green" disabled={count === 0 ? true : false} />
         </div>
       </div>
     </div>

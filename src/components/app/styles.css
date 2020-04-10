@@ -16,6 +16,14 @@ body {
   width: 100%;
   max-width: 500px;
 }
+.app__footer {
+  background-color: #e2e3f8;
+  margin-top: -15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
 .app__sum {
   display: flex;
   justify-content: center;
@@ -38,6 +46,7 @@ body {
 .app__buttons {
   display: flex;
   justify-content: center;
+  padding-bottom: 20px;
 }
 .app__header {
   color: white;
