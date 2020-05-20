@@ -16,6 +16,7 @@ const videos = [
   { id: '5MCQ8443Guw', name: 'SOHN - The Wheel (Live with the Metropole Orkest)' },
   { id: '146qbnDHjXk', name: 'Panama - Magic' },
   { id: 'jxczVhG0os8', name: 'Elbow - Grounds For Divorce' },
+  { id: 'XQl5KYiiFDI', name: 'Elbow - Magnificent (She Says)' },
   
 ];
 
