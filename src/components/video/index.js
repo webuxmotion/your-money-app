@@ -15,6 +15,8 @@ const videos = [
   { id: 'OHn-sfXTYP0', name: 'POLIÇA "Steady" (Official Video)' },
   { id: '5MCQ8443Guw', name: 'SOHN - The Wheel (Live with the Metropole Orkest)' },
   { id: '146qbnDHjXk', name: 'Panama - Magic' },
+  { id: 'jxczVhG0os8', name: 'Elbow - Grounds For Divorce' },
+  
 ];
 
 const qualities = ['auto', '240', '380', '480', '720', '1080', '1440', '2160'];
